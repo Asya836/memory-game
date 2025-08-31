@@ -1,6 +1,6 @@
 # MEMORY GAME
 
-Javascript ile hazırlanan basit bir hafıza oyunudur.
+HTML, CSS ve javascript ile hazırlanan basit bir hafıza oyunudur.
 
 Oyuncu tek tek kartları çevirip aynı olanları bulmaya çalışır. Eğer çevirdikleri aynı ise resimli yüz açık kalır ve diğerlerini eşleştirmeye çalışır. Oyun tüm hepsini eşleşene kadar devam eder.
 

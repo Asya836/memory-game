@@ -22,16 +22,20 @@ body {
     justify-content: center;
     position: relative;
     background: #cf6363;
-    gap: 30px;
-    padding: 40px 40px;
-    border-radius: 25px;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 1rem;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     color: #FFF;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .sonuc {
@@ -40,51 +44,58 @@ h2 {
 
 .goster {
     visibility: visible;
-    font-size: 2em;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     color: #fff;
     font-weight: 600;
+    text-align: center;
 }
 
 .reset {
-    padding: 15px 20px;
+    padding: 0.8rem 1.2rem;
     color: #fff;
     background: #c34646;
     border: none;
-    font-size: 1.4em;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 1rem;
+    touch-action: manipulation;
 }
 
-.reset:focus {
+.reset:focus,
+.reset:active {
     color: #FFF;
     background-color: #b44444;
 }
 
 .game {
-    width: 540px;
-    height: 420px;
+    width: 100%;
+    max-width: 540px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.5rem;
     transform-style: preserve-3d;
     perspective: 450px;
+    justify-content: center;
 }
 
 .item {
     position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
+    width: clamp(60px, 20vw, 80px);
+    height: clamp(60px, 20vw, 80px);
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3em;
+    font-size: clamp(1.5rem, 8vw, 2rem);
     background: #FFF;
     transform: rotateY(180deg);
-    transition: 0.25s;
+    transition: transform 0.25s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .item.kutuAc {
@@ -96,8 +107,8 @@ h2 {
     position: absolute;
     inset: 0;
     background: #c34646;
-    border-radius: 20px;
-    transition: 0.25s;
+    border-radius: 1rem;
+    transition: transform 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
 }
@@ -105,4 +116,33 @@ h2 {
 .kutuAc:after,
 .kutuEsle:after {
     transform: rotateY(180deg);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .game {
+        gap: 0.3rem;
+    }
+
+    .item {
+        width: clamp(50px, 18vw, 70px);
+        height: clamp(50px, 18vw, 70px);
+        font-size: clamp(1.2rem, 7vw, 1.8rem);
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .item {
+        width: clamp(45px, 16vw, 60px);
+        height: clamp(45px, 16vw, 60px);
+        font-size: clamp(1rem, 6vw, 1.5rem);
+    }
 }
